@@ -33,7 +33,7 @@
   <div :class="{'bg-primary':isActive,'txt-color':hasError}" class="static">
     <img :src="imgUrl" alt="">
 
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi eius ab eos facilis, natus reprehenderit illo. Distinctio sequi fugit quas voluptas ratione ipsum. Distinctio nesciunt beatae modi provident consectetur!</p>
+    <p :style="{color:stylePro.color,fontSize:stylePro.fontSize}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi eius ab eos facilis, natus reprehenderit illo. Distinctio sequi fugit quas voluptas ratione ipsum. Distinctio nesciunt beatae modi provident consectetur!</p>
   </div>
 
   <br>
@@ -94,6 +94,12 @@ let imgUrl = ref("https://picsum.photos/200/300");
 
 let isActive = ref(true);
 let hasError = ref(false);
+
+const stylePro = reactive({
+
+  color: 'red',
+  fontSize: '18px'
+})
 
 let person = reactive({
 
