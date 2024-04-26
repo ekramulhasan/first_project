@@ -9,11 +9,11 @@
   <br>
   <input type="text" v-model="person.person_name">
  
-  <h1>My name is {{ person.person_name }}</h1>
+  <h1 @click="change_name">My name is {{ person.person_name }}</h1>
   <h2>My soon name is {{ person.person_age }}</h2>
-  <button @click="decrement">+</button>
+  <button @click="increment(1)">+</button>
   <h3>{{ count }}</h3>
-  <button @click="increment">-</button>
+  <button @click="decrement(1)">-</button>
 
 </template>
 
@@ -65,7 +65,6 @@ export default{
 import { reactive,ref } from 'vue';
 
 let count = ref(0);
-count.value = 10;
 
 let person = reactive({
 
@@ -75,14 +74,19 @@ let person = reactive({
 
 });
 
-person.person_name = "Ekramul Hasan";
+// person.person_name = "Ekramul Hasan";
 
-function increment() { 
-  count.value++;
- }
+//es6 js code
+const increment = amount => count.value += amount;
+const decrement = amount => count.value -= amount;
+const change_name = () => person.person_name = "Raiyan Ahmed Sanjar";
+
+// function increment() { 
+//   count.value++;
+//  }
  
- function decrement() { 
-  count.value--;
- }
+//  function decrement() { 
+//   count.value--;
+//  }
 
 </script>
