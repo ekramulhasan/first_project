@@ -11,9 +11,9 @@
  
   <h1>My name is {{ person.person_name }}</h1>
   <h2>My soon name is {{ person.person_age }}</h2>
-  <button @click="count++">+</button>
+  <button @click="decrement">+</button>
   <h3>{{ count }}</h3>
-  <button @click="count--">-</button>
+  <button @click="increment">-</button>
 
 </template>
 
@@ -76,5 +76,13 @@ let person = reactive({
 });
 
 person.person_name = "Ekramul Hasan";
+
+function increment() { 
+  count.value++;
+ }
+ 
+ function decrement() { 
+  count.value--;
+ }
 
 </script>
