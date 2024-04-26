@@ -15,8 +15,12 @@
   <h3>{{ count }}</h3>
   <button @click="decrement(1)">-</button>
 
-
   <h2>{{ info }}</h2>
+
+
+  <div v-html="li_code">
+
+  </div>
 
 </template>
 
@@ -77,6 +81,21 @@ let person = reactive({
 
 });
 
+const li_code = ref(`
+<li>apple</li>
+<li>banana</li>
+<li>mango</li>
+`);
+
+const todos = ref([
+
+  {id:1,todo:"list-1"},
+  {id:2,todo:"list-2"},
+  {id:3,todo:"list-3"},
+  {id:4,todo:"list-4"}
+
+]);
+
 // person.person_name = "Ekramul Hasan";
 
 //es6 js code
@@ -88,7 +107,7 @@ const info = computed(() => {
 
   return 'name: '+person.person_name+' '+', age: '+person.person_age;
 
-})
+});
 
 // function increment() { 
 //   count.value++;
