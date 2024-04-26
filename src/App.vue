@@ -30,8 +30,10 @@
 
   </div>
 
-  <div :class="isActive ? 'bg-primary':'bg-success'">
+  <div :class="{'bg-primary':isActive,'txt-color':hasError}" class="static">
     <img :src="imgUrl" alt="">
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto quasi eius ab eos facilis, natus reprehenderit illo. Distinctio sequi fugit quas voluptas ratione ipsum. Distinctio nesciunt beatae modi provident consectetur!</p>
   </div>
 
   <br>
@@ -88,7 +90,10 @@ import { computed, reactive,ref } from 'vue';
 
 let count = ref(0);
 let imgUrl = ref("https://picsum.photos/200/300");
+
+
 let isActive = ref(true);
+let hasError = ref(false);
 
 let person = reactive({
 
@@ -145,5 +150,13 @@ const info = computed(() => {
 .bg-success{
   background-color: green;
 }
+.txt-color{
+  color: red;
+}
 
+.static{
+  background-color: green;
+  margin: 10px;
+  padding: 15px;
+}
 </style>
