@@ -15,6 +15,9 @@
   <h3>{{ count }}</h3>
   <button @click="decrement(1)">-</button>
 
+
+  <h2>{{ info }}</h2>
+
 </template>
 
 <!-- option api -->
@@ -62,7 +65,7 @@ export default{
 
 <script setup>
 
-import { reactive,ref } from 'vue';
+import { computed, reactive,ref } from 'vue';
 
 let count = ref(0);
 
@@ -81,6 +84,12 @@ const increment = amount => count.value += amount;
 const decrement = amount => count.value -= amount;
 const change_name = () => person.person_name = "Raiyan Ahmed Sanjar";
 
+const info = computed(() => {
+
+  return 'name: '+person.person_name+' '+', age: '+person.person_age;
+
+})
+
 // function increment() { 
 //   count.value++;
 //  }
@@ -88,5 +97,7 @@ const change_name = () => person.person_name = "Raiyan Ahmed Sanjar";
 //  function decrement() { 
 //   count.value--;
 //  }
+
+
 
 </script>
