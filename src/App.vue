@@ -22,6 +22,14 @@
 
   </div>
 
+  <div>
+
+    <ul>
+      <li v-for="(item, index) in todos" :key="item.id">{{ item.todo }}</li>
+    </ul>
+
+  </div>
+
 </template>
 
 <!-- option api -->
@@ -92,7 +100,7 @@ const todos = ref([
   {id:1,todo:"list-1"},
   {id:2,todo:"list-2"},
   {id:3,todo:"list-3"},
-  {id:4,todo:"list-4"}
+  {id:4,todo:"list-4"},
 
 ]);
 
