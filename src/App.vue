@@ -30,6 +30,13 @@
 
   </div>
 
+  <div :class="isActive ? 'bg-primary':'bg-success'">
+    <img :src="imgUrl" alt="">
+  </div>
+
+  <br>
+  <br>
+
 </template>
 
 <!-- option api -->
@@ -80,6 +87,8 @@ export default{
 import { computed, reactive,ref } from 'vue';
 
 let count = ref(0);
+let imgUrl = ref("https://picsum.photos/200/300");
+let isActive = ref(true);
 
 let person = reactive({
 
@@ -125,6 +134,16 @@ const info = computed(() => {
 //   count.value--;
 //  }
 
-
-
 </script>
+
+
+<style>
+
+.bg-primary{
+  background-color: brown;
+}
+.bg-success{
+  background-color: green;
+}
+
+</style>
