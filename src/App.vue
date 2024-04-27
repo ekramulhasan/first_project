@@ -2,7 +2,15 @@
 
 <h1>{{ title }}</h1>
 
-<Counter />
+
+<Counter v-for="i in 5"> 
+
+  <div class="">
+    <p>part-{{ i }}</p>
+  </div>
+
+</Counter>
+
  
 </template>
 

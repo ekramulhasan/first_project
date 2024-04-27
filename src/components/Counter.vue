@@ -1,5 +1,6 @@
 <template>
-   
+
+<slot />
 <div class="">
 
 <button @click="count++">+</button>
@@ -7,7 +8,7 @@
 <button @click="count--">-</button>
 
 </div>
-
+<br>
 </template>
 
 <script setup>
