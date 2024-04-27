@@ -2,7 +2,7 @@
 
 <h1>{{ title }}</h1>
 
-
+<input type="text" ref="input">
  
 </template>
 
@@ -10,16 +10,11 @@
 import { onBeforeMount,ref,onMounted } from 'vue';
 
 let title = ref('new item avaiable');
-
-onBeforeMount(() => {
-  title.value = 'learn vue js';
-  console.log('hello world');
-});
+const input = ref(null);
 
 onMounted(() => {
-
-  title.value = 'new value';
-  console.log('mounted');
+  input.value.focus()
+  console.log(input.value);
 });
 
 </script>
