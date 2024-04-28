@@ -12,11 +12,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { provide, ref } from 'vue';
 import Counter from './components/Counter.vue';
 
 let title = ref('new item avaiable');
 let count = ref(0);
+provide('msg','i am shawon');
 
 let increment = (n) => count.value += n;
 

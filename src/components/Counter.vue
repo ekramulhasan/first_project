@@ -1,5 +1,6 @@
 <template>
 
+<h3>{{ message }}</h3>
 <h2>{{ title }}</h2>
 
 <div class="">
@@ -14,9 +15,12 @@
 </template>
 
 <script setup>
-import { ref} from 'vue';
+import { inject, ref} from 'vue';
 
 const props = defineProps(['title','count']);
+defineEmits(['increaseBy','decreaseBy']);
+
+const message = inject('msg');
 
 
 </script>
