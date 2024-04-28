@@ -3,7 +3,7 @@
 <h1>{{ title }}</h1>
 
 
-<Counter v-for="i in 5"> 
+<Counter v-for="i in 5" title="counter name"> 
 
   <div class="">
     <p>part-{{ i }}</p>
