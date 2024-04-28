@@ -3,11 +3,8 @@
 <h1>{{ title }}</h1>
 
 
-<Counter v-for="i in 5" title="counter name"> 
+<Counter  title="counter name" :count="count" @increase-by="increment" @decrease-by="(n) => count -= n"> 
 
-  <div class="">
-    <p>part-{{ i }}</p>
-  </div>
 
 </Counter>
 
@@ -19,6 +16,9 @@ import { ref } from 'vue';
 import Counter from './components/Counter.vue';
 
 let title = ref('new item avaiable');
+let count = ref(0);
+
+let increment = (n) => count.value += n;
 
 </script>
 
