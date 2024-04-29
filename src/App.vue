@@ -1,25 +1,15 @@
 <template>
 
-<h1>{{ title }}</h1>
+<div class="">
 
+        <a href="/">Home </a>
+        <a href="/service"> | Service</a>
+        <a href="/about"> | About</a>
+        <a href="/contact"> | Contact</a>
 
-<Counter  title="counter name" :count="count" @increase-by="increment" @decrease-by="(n) => count -= n"> 
+</div>
 
+<router-view />
 
-</Counter>
-
- 
+   
 </template>
-
-<script setup>
-import { provide, ref } from 'vue';
-import Counter from './components/Counter.vue';
-
-let title = ref('new item avaiable');
-let count = ref(0);
-provide('msg','i am shawon');
-
-let increment = (n) => count.value += n;
-
-</script>
-
