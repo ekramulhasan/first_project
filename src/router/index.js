@@ -6,10 +6,10 @@ import Contact from "../views/Contact.vue";
 
 const routes = [
 
-    { path: '/', component: Home },
-    { path: '/service', component: Service },
-    { path: '/about', component: About },
-    { path: '/contact', component: Contact },
+    { path: '/',name:'home', component: Home },
+    { path: '/service', name:'service', component: Service },
+    { path: '/about-us',name:'about', component: About },
+    { path: '/contact',name:'contact', component: Contact },
 
 ];
 
