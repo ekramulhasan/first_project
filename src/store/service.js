@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 
+
 export const useServiceStore = defineStore('service',{
 
     state: () => ({
@@ -14,6 +15,13 @@ export const useServiceStore = defineStore('service',{
         
         ]
 
-    })
+    }),
+
+    getters: {
+
+        ourService: (state) => {
+            return state.services;
+        }
+    },
 
 });

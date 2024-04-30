@@ -6,7 +6,7 @@
 <div class="">
 
 <button @click="$emit('increaseBy',1)">+</button>
-<p>{{ count }}</p>
+<p>{{ count }} / {{ counterStore.doubleCount }} </p>
 <button @click="$emit('decreaseBy',1)">-</button>
 
 </div>
@@ -16,8 +16,10 @@
 
 <script setup>
 import { inject, ref} from 'vue';
+import { useCounterStore } from '../store/counter';
 
 const props = defineProps(['title','count']);
+const counterStore = useCounterStore();
 defineEmits(['increaseBy','decreaseBy']);
 
 const message = inject('msg');

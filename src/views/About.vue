@@ -11,6 +11,7 @@
     </ul>
 
     <h2>{{ counterStore.title }}</h2>
+    <p>{{ serviceStore.ourService }}</p>
 </template>
 
 <script setup>
