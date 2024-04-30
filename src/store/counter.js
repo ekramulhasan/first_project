@@ -10,6 +10,13 @@ export const useCounterStore = defineStore('counter',{
             count: 0,
             title: "new item avaiable",
         }
+    },
+
+    actions: {
+
+        increment(n){
+            this.count += n;
+        }
     }
 
 });
