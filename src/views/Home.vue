@@ -1,9 +1,9 @@
 <template>
 
-<h1>{{ title }}</h1>
+<h1>{{ counterStore.title }}</h1>
 
 
-<Counter  title="counter name" :count="count" @increase-by="increment" @decrease-by="(n) => count -= n"> 
+<Counter  title="counter name" :count="counterStore.count" @increase-by="increment" @decrease-by="(n) => counterStore.count -= n"> 
 
 
 </Counter>
@@ -12,14 +12,16 @@
 </template>
 
 <script setup>
+
 import { provide, ref } from 'vue';
 import Counter from '../components/Counter.vue';
+import {useCounterStore} from '../store/counter';
 
-let title = ref('new item avaiable');
-let count = ref(0);
+const counterStore = useCounterStore();
+
 provide('msg','i am shawon');
 
-let increment = (n) => count.value += n;
+let increment = (n) => counterStore.count += n;
 
 </script>
 

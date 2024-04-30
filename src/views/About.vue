@@ -3,30 +3,27 @@
     <button @click="goHome">go to home page</button>
 
     <ul>
-        <li v-for="service in services" :key="service.id">
+        <li v-for="service in serviceStore.services" :key="service.id">
             <router-link :to="{name:'single-service',params:{id: service.name}}">
                 {{ service.name }}
             </router-link>
         </li>
     </ul>
+
+    <h2>{{ counterStore.title }}</h2>
 </template>
 
 <script setup>
 
 import { ref } from 'vue';
 import { useRouter} from 'vue-router';
+import { useCounterStore } from '../store/counter';
+import { useServiceStore } from '../store/service';
 
 const router = useRouter();
+const counterStore = useCounterStore();
+const serviceStore = useServiceStore();
 
-let services = ref([
-
-    { id: 1, name: 'web application' },
-    { id: 2, name: 'app application' },
-    { id: 3, name: 'desktop application' },
-    { id: 4, name: 'customize application' },
-    { id: 5, name: 'digital marketing' },
-
-]);
 
 const goHome = () => {
 
